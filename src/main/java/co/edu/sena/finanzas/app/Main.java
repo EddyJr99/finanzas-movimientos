@@ -48,13 +48,26 @@ public class Main {
     private static void ejecutarOpcion(int opcion) {
         try {
             switch (opcion) {
-                case 1 -> registrarMovimiento();
-                case 2 -> listarMovimientos();
-                case 3 -> buscarMovimiento();
-                case 4 -> actualizarMovimiento();
-                case 5 -> eliminarMovimiento();
-                case 0 -> { }
-                default -> System.out.println("Opcion no valida.");
+                case 1:
+                    registrarMovimiento();
+                    break;
+                case 2:
+                    listarMovimientos();
+                    break;
+                case 3:
+                    buscarMovimiento();
+                    break;
+                case 4:
+                    actualizarMovimiento();
+                    break;
+                case 5:
+                    eliminarMovimiento();
+                    break;
+                case 0:
+                    break;
+                default:
+                    System.out.println("Opcion no valida.");
+                    break;
             }
         } catch (SQLIntegrityConstraintViolationException excepcion) {
             System.out.println("Dato rechazado por la base de datos (id inexistente o "
